@@ -8,10 +8,12 @@ object MissingNumber {
     val n = readLine().trim.toInt
     val inputList = readLine().split(" ").toList
     val elemsExist = new Array[Boolean](n)
+
     inputList.foreach(elem => {
       val elemConverted = elem.toInt - 1
       elemsExist.update(elemConverted, true)
     })
+
     println(elemsExist.indexWhere(!_) + 1)
 
   }
