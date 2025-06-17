@@ -4,6 +4,7 @@ import scala.annotation.tailrec
 import scala.io.StdIn._
 
 object Repetitions {
+
   def main(args: Array[String]): Unit = {
     val input = readLine().trim.toArray
 
