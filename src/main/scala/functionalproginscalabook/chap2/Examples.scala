@@ -55,6 +55,11 @@ object Examples {
 
     //Cons(x,xs) x::xs
     def hasSubsequence[A](sup: List[A], sub: List[A]): Boolean = {
+      sup match {
+        case Nil => false
+        case _ if (startsWith(sup, sub)) => true
+        case x :: xs => startsWith(xs, sub)
+      }
     }
 
     def startsWith[A](l: List[A], prefix: List[A]): Boolean = {
