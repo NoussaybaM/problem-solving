@@ -6,7 +6,8 @@ import scala.io.StdIn.readLine
 object Examples {
 
   def main(args: Array[String]): Unit = {
-
+    val x= Either.cond(1==1,"right","left")
+    println(x)
     def findFirst(ss: Array[String], key: String): Int = {
 
       def loop(position: Int): Int = {
@@ -70,5 +71,18 @@ object Examples {
       }
     }
 
+    def map2[A,B,C](a: Option[A], b: Option[B])(f: (A, B) => C):
+    Option[C] =
+      a flatMap (aa =>
+        b map (bb =>
+          f(aa, bb)))
+
   }
+  def sum(ints: IndexedSeq[Int]): Int =
+    if (ints.size <= 1)
+      ints.headOption getOrElse 0
+    else {
+      val (l,r) = ints.splitAt(ints.length/2)
+      sum(l) + sum(r)
+    }
 }
