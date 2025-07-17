@@ -44,6 +44,7 @@ object MaximumSubarray {
   //      case values => loop(values, globalMax)
   //    }
   //  }
+//https://leetcode.com/problems/maximum-subarray/description/
 
   def maxSubArray(nums: Array[Int]): Int = {
     nums.toList match {
