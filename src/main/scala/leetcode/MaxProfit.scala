@@ -18,6 +18,10 @@ object MaxProfit {
   }
 
   def findmaxprofit2(prices: Array[Int]):Int={
+    prices.zipWithIndex.map(elem=>{
+      val maxdistance= elem._2+elem._1
+      maxdistance>=prices.length-1
+    } ).find(_==true).getOrElse(false)
     prices.toList match {
       case Nil => 0
       case x::xs=> {
